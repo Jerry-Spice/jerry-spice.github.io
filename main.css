@@ -1,0 +1,100 @@
+body {
+    background-color:cornsilk;
+    
+}
+#header {
+    background-color: grey;
+    position: absolute;
+    text-align: center;
+    left: 0px;
+    top: 0px;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: 75px;
+}
+#footer {
+    background-color: grey;
+    position: absolute;
+    text-align: center;
+    left: 0px;
+    bottom: 0px;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: 75px;
+}
+
+#hand {
+    width: 100%;
+    height: 275px;
+    position: relative;
+}
+#opponent {
+    width: 100%;
+    height: 275px;
+    position: relative;
+}
+
+.card {
+    margin: 0px;
+    padding: 0px;
+    width: 200px;
+    height: 275px;
+    background-color: white;
+    position: relative;
+    border-style: solid;
+    border-radius: 20px;
+    border-color:silver;
+}
+.value {
+    margin: 0px;
+    padding: 0px;
+    width: 30px;
+    position:relative;
+    text-align: center;
+}
+.suit {
+    margin: 0px;
+    padding: 0px;
+    width: 30px;
+    position:relative;
+    text-align: center;
+}
+.flipvalue {
+    margin: 0px;
+    padding: 0px;
+    width: 30px;
+    position:relative;
+    left:80%;
+    top: 45%;
+    text-align: center;
+    transform: scale(-1,-1);
+}
+.flipsuit {
+    margin: 0px;
+    padding: 0px;
+    width: 30px;
+    position:relative;
+    left:80%;
+    top: 45%;
+    text-align: center;
+    transform: scale(-1,-1);
+}
+#warButton {
+    width: 100%;
+    height: 50px;
+    font-size: 30px;
+    position: relative;
+}
+#result-pop-up {
+    background-color:darkgrey;
+    padding: 5px;
+    width:fit-content;
+    height: fit-content;
+    text-align: center;
+    position: absolute;
+    top: 40%;
+    left: 1%;
+    z-index: 10;
+}

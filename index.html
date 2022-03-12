@@ -1,5 +1,64 @@
 <!DOCTYPE html>
-
 <html>
-    hello
+
+<head>
+    <link href="main.css" type="text/css" rel="stylesheet">
+    </link>
+    <script src="Card.js" type="text/javascript"></script>
+    
+</head>
+
+<body>
+    <div id="header">
+        <h1>WAR!</h1>
+    </div>
+    <div id="footer">
+        <h1>A Josh Landia Offical Project</h1>
+        <p>Created By <a href="https://github.com/Jerry-Spice">Jerry Spice</a> on Github</p>
+    </div>
+    <div id="result-pop-up" hidden> 
+        <h1 id="result">You Lost</h1>
+        <h2 id="points-awarded">+100 points to winner</h2>
+    </div>
+    <table>
+        <tr>
+            <td>
+                <h1>Your Card</h1>
+                <h2>Score:<span id="playerscore">0</span></h2>
+            </td>
+        </tr>
+        <tr id="hand">
+
+        </tr>
+        <tr>
+            <td>
+                <h1>Opponent Card</h1>
+                <h2>Score:<span id="opponentscore">0</span></h2>
+            </td>
+        </tr>
+        <tr id="opponenet">
+
+        </tr>
+        <tr>
+            <td>
+                <button id="warButton">WAR!</button>
+            </td>
+        </tr>
+    </table>
+
+    
+    
+    
+    
+    <!-- sample card
+        <div class="card" id="card0">
+        <h1 class="value">10</h1>
+        <h1 class="suit">♠</h1>
+        <h1 class="flipvalue">10</h1>
+        <h1 class="flipsuit">♠</h1>
+    </div>-->
+
+    <script src="main.js" type="text/javascript"></script>
+</body>
+
 </html>
