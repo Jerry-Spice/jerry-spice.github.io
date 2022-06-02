@@ -1,0 +1,60 @@
+
+/* CSS HEX 
+--paradise-pink: #ee4266ff;
+--russian-violet: #2a1e5cff;
+--rich-black-fogra-39: #0a0f0dff;
+--silver-sand: #c4cbcaff;
+--tiffany-blue: #3cbbb1ff;
+*/
+
+body {
+    --paradise-pink: #ee4266ff;
+    --russian-violet: #2a1e5cff;
+    --rich-black-fogra-39: #0a0f0dff;
+    --silver-sand: #c4cbcaff;
+    --tiffany-blue: #3cbbb1ff; 
+
+
+    /* background-color: var(--silver-sand) */
+}
+
+.header {
+    padding: 10px;
+    margin: 0px;
+    background-color: var(--rich-black-fogra-39);
+    width:98%;
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+#logo {
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+}
+.headerInfo {
+    color: var(--silver-sand);
+    vertical-align: middle;
+}
+
+.contentbox {
+    background-color: var(--silver-sand);
+    position: relative;
+    width: 200px;
+    height: 250px;
+}
+.contentHeader {
+    vertical-align: middle;
+    text-align: center;
+}
+.contentBody {
+    vertical-align: middle;
+    align-items: center;
+    padding: 5px;
+}
+.contentBodyInfo {
+    background-color: var(--tiffany-blue);
+    padding: 5px;
+    height: 180px;
+}
+
