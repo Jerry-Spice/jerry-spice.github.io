@@ -6,6 +6,15 @@
 </head>
 <body>
     <h1>Hi there!</h1>
-    <button onclick="alert('Hello World')"></button>
+    <button id="btn1">Click Me</button>
+    <script>
+        var btn1 = document.getElementById("btn1");
+        function sayHi() {
+            alert("Hey There!");
+        }
+
+        btn1.addEventListener("click", sayHi);
+        
+    </script>
 </body>
 </html>
