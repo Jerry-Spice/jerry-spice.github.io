@@ -1,31 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CE5K3XB8DY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-CE5K3XB8DY');
-</script>
+    <link type="text/css" rel="stylesheet" href="main.css" />
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-    <h1>Hi there!</h1>
-    <button id="btn1">Click Me</button>
-    <script>
-        var btn1 = document.getElementById("btn1");
-        function sayHi() {
-            alert("Hey There!");
-        }
+    <div class="header">
+        <table>
+            <tr>
+                <td>
+                    <img id="logo" src="logo.png">
+                </td>
+                <td>
+                    <h1 class="headerInfo">Joshlandia.com</h1>
+                </td>
+            </tr>
 
-        btn1.addEventListener("click", sayHi);
-        
-    </script>
+        </table>
+    </div>
+    <script src="main.js"></script>
 
 </body>
 </html>
