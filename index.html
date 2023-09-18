@@ -31,7 +31,20 @@
     </div>
     </div>
     <div class="mainarea">
-        
+        <SignUp
+            onSubmit={(fields) => {
+                // Example function to trim all string inputs
+                const updatedFields = {}
+                Object.keys(fields).forEach(key => {
+                    if (typeof fields[key] === 'string') {
+                        updatedFields[key] = fields[key].trim()
+                    } else {
+                        updatedFields[key] = fields[key]
+                    }
+                })
+                return updatedFields
+            }}
+        />
     </div>
     <script src="main.js"></script>
 
