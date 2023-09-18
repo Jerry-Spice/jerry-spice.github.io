@@ -1,3 +1,37 @@
+// NOT MY CODE DON'T TOUCH
+import {
+ SignUp 
+} from './ui-components';
+
+
+import { ThemeProvider, createTheme } from "@aws-amplify/ui-react";
+import { studioTheme } from './ui-components';
+
+const updatedTheme = createTheme({
+    // Extend the theme to update the button color
+    name: "my-theme-updates", 
+    tokens: {
+        components: {
+            button: {
+                primary: {
+                    backgroundColor: {
+                        value: "#b71c1c"
+                    },
+                },
+            },
+        },
+    },
+}, studioTheme)
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+    <ThemeProvider theme={updatedTheme}>
+        <App />
+    </ThemeProvider>
+);
+
+//ok this is mine again
+
 var hamburger_menu_move = document.getElementById("hamburger_menu_move_out");
 var hamburger_menu_button = document.getElementById("hamburger_menu");
 var hamburger_boolean = false;
