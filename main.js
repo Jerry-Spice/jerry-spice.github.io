@@ -5,7 +5,7 @@ import {
 
 import { Storage } from "@aws-amplify/storage"
 
-await Storage.put("test.txt", "Hello");
+
 
 import { ThemeProvider, createTheme } from "@aws-amplify/ui-react";
 import { studioTheme } from './ui-components';
@@ -41,6 +41,8 @@ try {
 
 //ok this is mine again
 
+var storageTest= document.getElementById("storageTest);
+
 var hamburger_menu_move = document.getElementById("hamburger_menu_move_out");
 var hamburger_menu_button = document.getElementById("hamburger_menu");
 var hamburger_boolean = false;
@@ -64,5 +66,11 @@ function process_hamburger_menu() {
         move_in();
     }
 }
+
+function test_storage() {
+ await Storage.put("test.txt", "Hello");
+}
+
+storageTest.addEventListener("click", test_storage);
 
 hamburger_menu_button.addEventListener("click", process_hamburger_menu)
