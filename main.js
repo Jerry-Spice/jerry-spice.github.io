@@ -28,9 +28,9 @@ const updatedTheme = createTheme({
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <ThemeProvider theme={updatedTheme}>
+    "<ThemeProvider theme={updatedTheme}>
         <App />
-    </ThemeProvider>
+    </ThemeProvider>"
 );
 
 try {
