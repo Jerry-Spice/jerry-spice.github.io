@@ -39,7 +39,7 @@ try {
 
 //ok this is mine again
 
-var storageTest= document.getElementById("storageTest);
+var storageTest= document.getElementById("storageTest");
 
 var hamburger_menu_move = document.getElementById("hamburger_menu_move_out");
 var hamburger_menu_button = document.getElementById("hamburger_menu");
