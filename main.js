@@ -3,6 +3,9 @@ import {
  SignUp 
 } from './ui-components';
 
+import { Storage } from "@aws-amplify/storage"
+
+await Storage.put("test.txt", "Hello");
 
 import { ThemeProvider, createTheme } from "@aws-amplify/ui-react";
 import { studioTheme } from './ui-components';
