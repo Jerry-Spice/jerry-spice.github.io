@@ -69,6 +69,7 @@ function process_hamburger_menu() {
 
 function test_storage() {
  await Storage.put("test.txt", "Hello");
+ console.log("Tested Storage");
 }
 
 storageTest.addEventListener("click", test_storage);
