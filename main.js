@@ -1,18 +1,13 @@
-// NOT MY CODE DON'T TOUCH
 import {
- SignUp 
+    SignUp
 } from './ui-components';
-
-import { Storage } from "@aws-amplify/storage"
-
-
 
 import { ThemeProvider, createTheme } from "@aws-amplify/ui-react";
 import { studioTheme } from './ui-components';
 
 const updatedTheme = createTheme({
     // Extend the theme to update the button color
-    name: "my-theme-updates", 
+    name: "my-theme-updates",
     tokens: {
         components: {
             button: {
@@ -28,16 +23,14 @@ const updatedTheme = createTheme({
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    "<ThemeProvider theme={updatedTheme}><App /></ThemeProvider>"
+    <ThemeProvider theme={updatedTheme}>
+        <App />
+    </ThemeProvider>
 );
 
-try {
-    const user = await Auth.signIn(username, password);
-} catch (error) {
-    console.log('error signing in', error);
-}
 
-//ok this is mine again
+
+
 
 var storageTest= document.getElementById("storageTest");
 
