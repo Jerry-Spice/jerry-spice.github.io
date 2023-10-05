@@ -10,47 +10,59 @@ function process_message_to_colors(original_message, current_message) {
     var current_string = "";
     var colored_text;
     for (var i = 0; i < split_orignal_message.length; i++) {
-        colored_text = false;
-        current_string = "";
-        //this block of two while loops should ensure that each string is the same length;
-        while (split_orignal_message[i].length > split_current_message[i].length) {
-            split_current_message[i] += " ";
-        }
-        while (split_orignal_message[i].length < split_current_message[i].length) {
-            split_orignal_message[i] += " ";
-        }
-        //looping through every character in the word
-        for (var g = 0; g < split_orignal_message[i].length; g++) {
-            //if they match then no problem. We add it to the buffer string
-            if (split_orignal_message[i][g] == split_current_message[i][g]) {
-                current_string += split_orignal_message[i][g];
-            // if they don't match then we have an issue
-            // if the original is a space that means it was artificially lengthed in order to compensate for the
-            // addition of something in the new message
-            } else if (split_orignal_message[i][g] == " "){
-                split_new_message.push(current_string+split_current_message[i][g]);
-                current_string = "";
-                new_message_coloring.push("addition");
-                colored_text = true;
-            // conversely if the current message has a space then it was artificially lengthened to compensate
-            // for the original string being removed.
-            } else if (split_current_message[i][g] == " "){
-                split_new_message.push(current_string+split_orignal_message[i][g]);
-                current_string = "";
-                new_message_coloring.push("subtraction");
-                colored_text = true
+        if (split_current_message[i] !== undefined || split_current_message[i] !== undefined) {
+            colored_text = false;
+            current_string = "";
+            //this block of two while loops should ensure that each string is the same length;
+            while (split_orignal_message[i].length > split_current_message[i].length) {
+                split_current_message[i] += " ";
             }
+            while (split_orignal_message[i].length < split_current_message[i].length) {
+                split_orignal_message[i] += " ";
+            }
+            //looping through every character in the word
+            for (var g = 0; g < split_orignal_message[i].length; g++) {
+                //if they match then no problem. We add it to the buffer string
+                if (split_orignal_message[i][g] == split_current_message[i][g]) {
+                    current_string += split_orignal_message[i][g];
+                    // if they don't match then we have an issue
+                    // if the original is a space that means it was artificially lengthed in order to compensate for the
+                    // addition of something in the new message
+                } else if (split_orignal_message[i][g] == " ") {
+                    split_new_message.push(current_string + split_current_message[i][g]);
+                    current_string = "";
+                    new_message_coloring.push("addition");
+                    colored_text = true;
+                    // conversely if the current message has a space then it was artificially lengthened to compensate
+                    // for the original string being removed.
+                } else if (split_current_message[i][g] == " ") {
+                    split_new_message.push(current_string + split_orignal_message[i][g]);
+                    current_string = "";
+                    new_message_coloring.push("subtraction");
+                    colored_text = true
+                }
+            }
+            if (!colored_text) {
+                new_message_coloring.push("normal");
+            }
+            split_new_message.push(current_string);
         }
-        if (!colored_text) {
-            new_message_coloring.push("normal");
-        }
-        split_new_message.push(current_string);
     }
     return [split_new_message, new_message_coloring];
 }
 
-function convert_html_to_text(element) {
-
+//the current problem is that when I read the initial value of the div it's just text, but after changing it to colorize it
+//it has html tags. so I need to remove those when I process the text.
+//THIS FUNCTION IS CAUSING PROBLEMS - it is reading the tag as well as the tag text for some reason and that is breaking the system.
+function convert_html_to_text(parent_element) {
+    var children_tags = parent_element.children;
+    console.log(children_tags);
+    var net_text = "";
+    for (var i = 0; i < children_tags.length; i++) {
+        net_text += children_tags[i].innerHTML;
+        console.log(children_tags[i].innerHTML);
+    }
+    return net_text;
 }
 
 //this makes it so the output of the process_message_to_colors function isn't a giant list. it's something smaller to be
@@ -113,8 +125,9 @@ var sample_text = document.getElementById("sample_text");
 
 //updates the text on screen
 function check_text() {
-    var new_text = document.getElementById("sample_text").innerHTML;
-
+    var new_text = document.getElementById("sample_text");
+    new_text = convert_html_to_text(new_text);
+    console.log(new_text);
     var text_and_colors = process_message_to_colors(base_text,new_text);
     var joined_text_and_colors = join_text_and_colors_lists(text_and_colors[0], text_and_colors[1]);
     var text_list = joined_text_and_colors[0];
@@ -126,3 +139,5 @@ function check_text() {
 
     var html_elements = convert_colors_to_html(sample_text, text_list, colors_list);
 }
+
+setInterval(check_text, 5000);
