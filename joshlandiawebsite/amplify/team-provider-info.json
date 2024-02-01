@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-joshlandiawebsite-dev-03728-authRole",
+      "UnauthRoleArn": "arn:aws:iam::781351972065:role/amplify-joshlandiawebsite-dev-03728-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::781351972065:role/amplify-joshlandiawebsite-dev-03728-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-joshlandiawebsite-dev-03728-deployment",
+      "UnauthRoleName": "amplify-joshlandiawebsite-dev-03728-unauthRole",
+      "StackName": "amplify-joshlandiawebsite-dev-03728",
+      "StackId": "arn:aws:cloudformation:us-east-1:781351972065:stack/amplify-joshlandiawebsite-dev-03728/fcf822a0-c0c3-11ee-8d28-0a6786933c53",
+      "AmplifyAppId": "d1qu8oauar4ifn"
+    },
+    "categories": {
+      "api": {
+        "joshlandiawebsite": {}
+      }
+    }
+  }
+}
